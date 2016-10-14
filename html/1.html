@@ -11,7 +11,7 @@
 
 Untuk membuat kurawal seperti pada gambar berikut <br>
 <img src="../images/1.png"> 
-<pre><code class="language-latex,line-numbers">
+<pre class="line-numbers" ><code class="language-latex">
 \usetikzlibrary{patterns} % untuk patern
 \usetikzlibrary{intersections} % untuk menentukan titik pertemuan
 . . . . . . . . . . . . . . . . .  . .
@@ -27,11 +27,8 @@ Untuk membuat kurawal seperti pada gambar berikut <br>
 \node at (0,4) [above right] {$s \text{(m)}$};
 \node at (3,0) [right] {$t \text{(s)}$};
 \draw [decorate,decoration={brace,amplitude=10pt,mirror},xshift=-4pt,yshift=0pt]
-(1.7,0) -- (1.7,3) node [black,midway,xshift=0.6cm] 
-{\footnotesize $\Delta s$};
-\draw [decorate,decoration={brace,amplitude=7pt,mirror},yshift=0pt]
-(0,0) -- (1.5,0) node [midway,yshift=-0.5cm] 
-{\footnotesize $\Delta t$};
+(1.7,0) -- (1.7,3) node [black,midway,xshift=0.6cm]{\footnotesize $\Delta s$};
+\draw [decorate,decoration={brace,amplitude=7pt,mirror},yshift=0pt] (0,0) -- (1.5,0) node [midway,yshift=-0.5cm] {\footnotesize $\Delta t$};
 \end{tikzpicture}
 
 
