@@ -228,7 +228,7 @@ pre[class*="language-"][data-line] {
 }
 pre[data-line] code {
 	position: relative;
-	padding-left: 4em;
+	padding-left: 3.8em;
 }
 pre .line-highlight {
 	margin-top: 0;
