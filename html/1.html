@@ -114,8 +114,28 @@ $\vec{p}=\frac{1}{2}(\vec{a}+\vec{b})$
 
 
 
+<!-- Bagian Membuat Minipage   -->
+<h2> Membuat 2 Kolom dengan Minipage </h2>
+Untuk membuat 2 kolom dengan minipage kita panggil minipage dan adjustbox
+
+<img src="../images/5.png" width="600"> 
+<pre> <code class="language-latex,line-numbers">
+\usepackage{adjustbox}
+. . . . . . . . . . .  . . . . . 
+
+\adjustbox{valign=t}{\begin{minipage}[t]{0.57\textwidth}
+\includegraphics[width=1\linewidth]{g1} 
+\captionof{figure}{Seorang pengendara sepeda}
+
+\end{minipage}}\hfill
+\adjustbox{valign=t}{\begin{minipage}[t]{0.37\textwidth}
+\justify
+Karena titik B sebagai acuan, maka $x_B=0$. Posisi pengendara sepeda pada saat di A adalah 4 meter di kiri titik acuan B. Dalam hal ini, vektor posisi A adalah $x_A = \minus4$ meter. Posisi pengendara sepeda pada saat di C adalah 4 meter di sebelah kanan titik acuan B. Dalam hal ini, vektor posisi C adalah $x_C=4$ meter.\\
+\end{minipage}}
 
 
+
+</code></pre>
 
 
 
