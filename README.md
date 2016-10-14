@@ -1,1 +1,2 @@
 # doklatexlinux
+ini resi
