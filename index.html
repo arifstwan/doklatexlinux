@@ -1,1 +1,138 @@
-s
+<!DOCTYPE html>
+<html>
+<head>
+<link href="css/prism.css" rel="stylesheet" />
+ 
+<!-- You also need to add some content to highlight, but that is covered elsewhere. -->
+</head>
+<script src="js/prism.js"></script>
+
+<pre><code class="language-latex,line-numbers">
+\documentclass[12pt,legalpaper,oneside]{book}
+\usepackage[latin1]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{multicol}
+\usepackage{amsmath}
+% menaruh gambar di item \parpic[]
+\usepackage[most]{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usetikzlibrary{intersections}
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{}X}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\columnseprule}{0.2pt}
+\def\columnseprulecolor{\color{blue!20}}
+\usepackage{mdwlist}
+\usepackage[document]{ragged2e}
+% The Math font
+\usepackage{mathpazo}
+\renewcommand{\rmdefault}{put}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{tikz}   
+\usetikzlibrary{patterns}
+\usepackage{adjustbox}
+\usepackage{graphicx,caption}
+\usepackage{colortbl}
+\newcommand{\minus}{\scalebox{0.4}[1.0]{$-$}}
+\usepackage{lipsum}
+\usepackage[left=1.5cm,right=1.2cm,top=1.5cm,bottom=1.55cm]{geometry}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\newtcolorbox{kotak}{colback=gray!2!white, width=10cm, halign=flush center, before=\par\centering\smallskip, after=\par}
+\newtcolorbox{kotakpjg}{colback=gray!2!white, width=18cm, halign=flush center, before=\par\centering\smallskip, after=\par}
+
+\newtcolorbox{contoh}[1] {colback=gray!2!white, colframe=gray!70, fonttitle=\bfseries, title=#1,breakable=true}
+\newtcolorbox{kegiatan}[1] {colback=white, colframe=gray!70, fonttitle=\bfseries, title=#1, breakable=true}
+\newtcolorbox{catatan}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  borderline west={2pt}{0pt}{gray}, % straigh vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=0pt, % no real frame,
+  fonttitle={\large\bfseries},
+  coltitle={black},  % Black colour for title
+  title={ },  % Fixed title
+  attach title to upper, % Move the title into the box
+  #1
+}
+
+\usepackage{fourier}
+\usepackage{stackengine}
+\usepackage{calc}
+\renewcommand{\baselinestretch}{1.0}
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}\,#1\,\end{smallmatrix}\right)%
+}
+
+
+\begin{document}
+\flushleft {\textbf{Pengertian Vektor}}
+
+\textit{Dalam teknik dan sains} kita sering menyebutkan besaran-besaran hanya dalam besar(nilainya) saja, misalnya massa, waktu, dan suhu. Besaran-besaran ini disebut besaran skalar. Di lain sisi banyak besaran fisika yang memiliki besar dan juga arah. Misalnya perpindahan, kecepatan, percepatan, gaya, momentum, dan momentum sudut. Vektor biasanya dinyatakan dengan simbol yang diberi arah di atasnya atau dengan \textit{facetype} italic. Misalnya vektor gaya $\vec{F}$ atau \textbf{F} ditulis seperti \hfill \break
+$$\vec{F}=12 \text{N ke arah timur}$$
+
+\flushleft {\textbf{Menggambar Vektor}}
+
+Vektor digambarkan dengan anak panah. Panjangnya anak panah menunjukkan besarnya, dan arah anak panah menunjukkan arah vektor. Panjang vektor dapat dibuat skala namun harus disesuaikan jika menggambar lebih dari 1 vektor. Vektor gaya 100N dapat digambar menjadi 2cm dan vektor gaya 200N dapat digambar sepanjang 4cm. 
+
+\centering
+\begin{tikzpicture}[scale=0.5]
+\draw [ultra thick,->, >=stealth] (0,0) -- (4,2);
+\node at (2,1) [above left] {$\vec{F}=100$ N};
+\draw [ultra thick,->, >=stealth] (5,0) -- (13,4);
+\node at (9,2) [above left] {$\vec{F}=200$ N};
+\end{tikzpicture}
+
+
+\flushleft {\textbf{Penjumlahan vektor}}
+
+Seperti telah disebutkan sebelumnya vektor dapat digambar menggunakan anak panah. Penjumlahan dari beberapa vektor disebut resultan vektor. Misal ada vektor $\vec{a}$ ditambah $\vec{b}$ menghasilkan vektor $\vec{c}$.
+
+\begin{tikzpicture}[>=stealth, scale=0.5]
+\draw [->] (25,0) --node[above, midway]{$\vec{a}$}(29,0);
+\draw [->] (29,0) --node[right, midway]{$\vec{b}$}(30,3);
+\draw [->] (25,0) --node[above left, midway]{$\vec{c}$}(30,3);
+
+\draw [->] (0,0) --node[above, midway]{$\vec{a}$}(4,0);
+\node at (6,1) [above] {+};
+\node at (12,1) [above] {+};
+\draw [->] (9,0) --node[right, midway]{$\vec{b}$}(10,3);
+\draw [->] (13,0) --node[above left, midway]{$\vec{c}$}(18,3);
+\node at (22,1) [above]{dapat diubah menjadi -->};
+\end{tikzpicture}
+\hfill \break
+ Misal: Seorang anak bergerak ke arah timur sejauh 32m. Kemudian anak tersebut bergerak ke selatan sejauh 5m. Lalu melanjutkan perjalanan ke arah barat sejauh 20m. Berapakah perpindahan anak tersebut dari titik awal hingga posisi akhir. (a) Gambarkan perpindahan anak tersebut! (b) Tentukan besar perpindahan anak tersebut!
+\adjustbox{valign=t} {\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}[> = stealth]
+\draw[thick,->] (0,0) -- (8,0);
+\draw[thick, ->] (8,0) -- (8,-1.25);
+\draw[thick, ->] (8,-1.25)--(3, -1.25);
+\draw[thick, ->, red] (0,0)--(3,-1.25);
+
+\node at (4,0) [above] {perpindahan pertama $d_1$=32 m};
+\node at (8,-0.625) [right, rotate=270, xshift=-2cm, yshift=0.2cm] {perpindahan $d_2$=5 m};
+\node at (5,-1.25) [below] {perpindahan $d_3$=20 m};
+\node at (2,-0.625) [below left, red] {$\vec{R}$};
+\end{tikzpicture}
+\end{minipage}}
+\adjustbox{valign=t}{\begin{minipage}{0.43\textwidth}
+(b) Menentukan besar resultan : \hfill \break
+sumbu x = 32 - 20= 12 m    \hfill \break
+sumbu y = -5 m \hfill \break
+$R=\sqrt{x^2+y^2}$ \hfill \break
+$R=\sqrt{12^2+(-5)^2}=\sqrt{144+25}$ \hfill \break
+$R=\sqrt{169} = 13$m   \hfill \break
+\end{minipage}}
+\end{document}
+</code></pre>
+
+</body>
+
+ 
+</html>
+
+
