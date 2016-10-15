@@ -233,8 +233,31 @@ Karena titik B sebagai acuan, maka $x_B=0$. Posisi pengendara sepeda pada saat d
 
 </code></pre>
 
+<img src="../images/8.png" width="300"> 
+<pre> <code class="language-latex,line-numbers">
 
+\begin{tikzpicture}[scale=0.5, tdplot_main_coords,axis/.style={->,dashed},thin]
 
+% -- remove these 3 lines if no axis is preferred
+\draw[axis] (0, 0, 0) -- (9, 0, 0) node [right] {$X$};
+\draw[axis] (0, 0, 0) -- (0, 14, 0) node [above] {$Y$};
+\draw[axis] (0, 0, 0) -- (0, 0, 8) node [above] {$Z$};
+\draw [white] (3,12,7) -- node [midway, black, rotate=30] {\footnotesize{$||$}}(6,12,5);
+\draw [white] (3,12,7) -- node [midway, black, rotate=-30] {\footnotesize{$||$}}(0,12,5);
+\draw [gray, dashed] (3,12,7) -- node [red,midway, rotate=20] {\footnotesize{2cm}} (3,12,5);
+\node at (0,0,0) {A};
+\draw (6,0,0) node {B} -- node [midway,rotate=-5 , below, red] {12cm}(6,12,0) node {C} -- node [midway, rotate = 30, below, red]{6cm}( 0,12,0) node {D} -- node [midway, rotate = 90, below, red]{5cm}(0,12,5)node {S} -- (6,12,5)node {R} -- (6,12,0);
+\draw (6,12,5) -- (6,0,5) node {Q} -- (6,0,0);
+\draw[dashed] (6,0,5) -- (0,0,5) node {P} -- (0,12,5);
+\draw (6,12,5)-- (3,12,7) node [above]{v} -- (0,12,5);
+\draw (6,0,5) -- (3,0,7) node [above] {u} -- (3,12,7);
+
+\draw [dashed](3,0,7) -- (0,0,5);
+\draw [thick, blue] (3,0,7) -- (6,12,5);
+\draw [thick, blue] (0,0,0) -- (0,12,5);
+\end{tikzpicture}
+
+</code></pre>
 
 
 
