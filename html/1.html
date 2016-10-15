@@ -140,12 +140,42 @@ Karena titik B sebagai acuan, maka $x_B=0$. Posisi pengendara sepeda pada saat d
 
 <!-- Vektor 3 Dimensi -->
 <h2> Ini adalah vektor 3 Dimensi </h2>
-Isinya belum ada
 
+<img src="../images/6.png" width="300"> 
+<pre> <code class="language-latex,line-numbers">
 
+\begin{tikzpicture}[>=stealth, scale=0.4]
 
+\coordinate[label=below:$O$] (O) at (0,0);
+\coordinate[label=below:$A$] (A) at (-1.6,-2);
+\coordinate[label=below:$B$] (B) at (2.9,-2);
+\coordinate[label=below:$C$] (C) at (4.5,0);
+\coordinate[label=left:$D$] (D) at (-1.6,2.5);
+\coordinate[label=right:$E$] (E) at (2.9,2.5);
+\coordinate[label=right:$F$] (F) at (4.5,4.5);
+\coordinate[label=left:$G$] (G) at (0,4.5);
+\node at (-3,-3.75) [right] {$x$};
+\node at (7,0) [below] {$y$};
+\node at (0,6.5) [right] {$z$};
 
+\draw [thick,dashed] (O) -- (A) ;
+\draw [thick,dashed] (O) -- (C) ;
+\draw [thick,dashed] (O) -- (G) ;
+\draw [thick, ->] (G) -- (0,6.5);
+\draw [thick, ->] (A) -- (-3,-3.75);
+\draw [thick, ->] (C) -- (7,0);
+\draw [thick] (G) -- (F) ;
+\draw [thick] (F) -- (C) ;
+\draw [thick]  (F) --(E);
+\draw [thick]  (G) --(D);
+\draw [thick] (D) -- (E) ;
+\draw [thick] (D) -- (A) ;
+\draw [thick]  (E) --(B);
+\draw [thick]  (B) --(C);
+\draw [thick]  (A) --(B);
+\end{tikzpicture}
 
+</code></pre>
 
 
 
