@@ -184,7 +184,54 @@ Karena titik B sebagai acuan, maka $x_B=0$. Posisi pengendara sepeda pada saat d
 
 </code></pre>
 
+<li> <h3> Ini malah pake plot 3D temenan </h3></li>
 
+<img src="../images/7.png" width="300"> 
+<pre> <code class="language-latex,line-numbers">
+
+\usepackage{tikz}   
+\usepackage{tikz-3dplot}
+\usetikzlibrary{shapes,calc,positioning}
+\tdplotsetmaincoords{70}{120}
+. . . . . . .  . . . . . . . .  . 
+
+
+
+
+\begin{tikzpicture}[scale=1, tdplot_main_coords,axis/.style={->,dashed},thick]
+
+% -- remove these 3 lines if no axis is preferred
+\draw[axis] (-4, 0, 0) -- (3, 0, 0) node [right] {$X$};
+\draw[axis] (0, 0, 0) -- (0, 3, 0) node [above] {$Y$};
+\draw[axis] (0, 0, 0) -- (0, 0, 3) node [above] {$Z$};
+
+\coordinate  (d1) at (-2,0,1){};
+\coordinate  (d2) at (2,0,1){};
+\coordinate  (d3) at (2,4,0){};
+\coordinate  (d4) at (-2,4,0){};
+\coordinate  (d5) at (-2,0,0){};
+\coordinate  (d6) at (2,0,0){};
+% fill gray color with opacity
+\fill[gray!80,opacity=0.2] (d2) -- (d6) -- (d3)-- cycle; 
+\fill[gray!80,opacity=0.2] (d1) -- (d5) -- (d6)-- (d2)--cycle; 
+\fill[gray!80,opacity=0.2] (d1) -- (d5) -- (d4)-- cycle; 
+\fill[gray!80,opacity=0.8] (d6) -- (d3) -- (d4)-- (d5)--cycle; 
+\fill[gray!80,opacity=0.2] (d2) -- (d6) -- (d3)-- cycle; 
+\fill[gray!80,opacity=0.1] (d1) -- (d2) -- (d3)-- (d4)--cycle;
+% draw frames
+\draw []       (d1)--(d2)--(d3)--(d4)--(d1);
+\draw [dashed] (d1)--(d5)--(d4);
+\draw []       (d2)--(d6)--(d3);
+\draw []       (d5)--(d6);
+% --- labels for vertices
+\foreach \i in {1,2,...,6}
+    {
+      \draw[fill=black] (d\i) circle (0.1em)
+        node[above right] {\tiny \i};
+    }
+\end{tikzpicture}
+
+</code></pre>
 
 
 
